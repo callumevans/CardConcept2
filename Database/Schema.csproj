@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Migrations\1_create_user_account_tables.psql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Migrations\2_create_card_tables.psql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="dbup" Version="4.0.0-beta0002" />
+    <PackageReference Include="dbup-postgresql" Version="4.0.0-beta0002" />
+    <PackageReference Include="Npgsql" Version="2.2.7" />
+  </ItemGroup>
+
+</Project>

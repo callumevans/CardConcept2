@@ -1,0 +1,12 @@
+CREATE EXTENSION IF NOT EXISTS citext;
+
+CREATE TABLE user_account (
+  id SERIAL PRIMARY KEY,
+  email_address CITEXT NOT NULL UNIQUE,
+  password TEXT NOT NULL
+);
+
+CREATE TABLE user_account_instance (
+  id SERIAL PRIMARY KEY,
+  account_id INT NOT NULL REFERENCES user_account(id)
+);

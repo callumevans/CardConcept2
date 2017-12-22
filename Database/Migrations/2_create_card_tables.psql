@@ -1,0 +1,10 @@
+CREATE TABLE card (
+  id BIGSERIAL PRIMARY KEY,
+  created TIMESTAMP NOT NULL
+);
+
+CREATE TABLE card_ownership (
+  card_id BIGINT NOT NULL REFERENCES card(id),
+  account_instance_id INT NOT NULL REFERENCES user_account_instance(id),
+  PRIMARY KEY (card_id, account_instance_id)
+);
